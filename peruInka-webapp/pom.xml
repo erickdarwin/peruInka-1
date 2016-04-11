@@ -1,21 +1,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>peruInka-webapp</groupId>
+	<groupId>pe.com.peruInka-webapp</groupId>
 	<artifactId>peruInka-webapp</artifactId>
 	<version>1.0.0.0.beta</version>
 	<packaging>war</packaging>
-	
+
 	<properties>
 		<release.version>1.0.0.0-beta</release.version>
 		<spring.version>3.1.0.RELEASE</spring.version>
 		<org.slf4j.version>1.6.1</org.slf4j.version>
-	</properties>	
+	</properties>
 
 	<dependencies>
-	
+
 		<dependency>
-			<groupId>peruInka-core</groupId>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>pe.com.peruInka-core</groupId>
 			<artifactId>peruInka-core</artifactId>
 			<version>1.0.0.0.beta</version>
 		</dependency>
@@ -121,7 +128,12 @@
 			<version>${org.slf4j.version}</version>
 			<scope>runtime</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j.version}</version>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -181,6 +193,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+
+		<dependency>
 			<groupId>commons-digester</groupId>
 			<artifactId>commons-digester</artifactId>
 			<version>2.1</version>
@@ -193,8 +211,6 @@
 			<artifactId>groovy-all</artifactId>
 			<version>1.7.0</version>
 		</dependency>
-
-
 
 
 
@@ -231,29 +247,13 @@
 			</resource>
 		</resources>
 	</build>
-	<profiles>
-		<profile>
-			<id>local</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<build>
-				<resources>
-					<resource>
-						<directory>src/main/java</directory>
-						<includes>
-							<include>**/*.properties</include>
-						</includes>
-					</resource>
-				</resources>
-			</build>
-		</profile>
-	</profiles>
+
 	<repositories>
 		<repository>
 			<id>The Buzz Media Maven Repository</id>
 			<url>http://maven.thebuzzmedia.com</url>
 		</repository>
-	</repositories>	
-	
+	</repositories>
+
+
 </project>
