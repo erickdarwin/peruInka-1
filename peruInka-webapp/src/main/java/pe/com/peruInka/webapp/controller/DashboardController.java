@@ -17,13 +17,17 @@ import pe.com.peruInka.webapp.util.Person;
 @Controller
 public class DashboardController {
 
+	public static List<Person> list=new ArrayList<Person>();
+
+
+	
 	@RequestMapping(value = "home/dashboard", method = RequestMethod.GET)
 	public String electionsDashboard(Model model, HttpServletRequest request) {
 
 		Person person = new Person();
 		person.setName("Omar");
 		
-		List<Person> list=new ArrayList<Person>();
+//		List<Person> list=new ArrayList<Person>();
 		list.add(person);
 		
 		model.addAttribute("listPerson", list);
@@ -34,6 +38,11 @@ public class DashboardController {
 	@RequestMapping(value = "/home/searchJsonById/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
 	public @ResponseBody String searchJsonById(@PathVariable("id") Long id) {
 
+		
+		Person person = new Person();
+		person.setName("Juan");
+		list.add(person);
+		
 		return "Return value::: " + id;
 	}
 

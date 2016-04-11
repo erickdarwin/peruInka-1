@@ -9,13 +9,11 @@
 <%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
 
-dashboard
-
 Bienvenido a la cadena de hotel PeruInka
 
 <br>
 
-
 <display:table name="${listPerson}" id="item" class="table">
- 	<display:column title="Nombres y Apellidos" property="name" />
+ 	<display:column title="Codigo" property="id" />
+<	<display:column title="Nombres y Apellidos" property="name" />
 </display:table>
