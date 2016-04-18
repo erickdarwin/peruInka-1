@@ -9,21 +9,18 @@
 <%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
 
-Bienvenido a la cadena de hotel PeruInka
+Formulario Persona : ${opc}<br>
 
-<br>
-<a href="frmPerson">Nueva Persona</a>
-<br>
-<display:table name="${listPerson}" id="item" class="table">
- 	<display:column title="Codigo" property="id" />
-	<display:column title="Nombres" property="name" />
-	<display:column title="Ape Paterno" property="lastNameP" />
-	<display:column title="Ape Paterno" property="lastNameM" />
-	<display:column title="DNI" property="dni" />
-	<display:column title="Estado" property="status" />
-	<display:column title="OPC">
-		<a href="editPerson?id_=${item.id}">Modificar</a>
-		<a href="deletePerson?id_=${item.id}">Eliminar</a>
-	</display:column>
-	
-</display:table>
+<form:form commandName="person" action="savePerson" method="POST">
+
+id: <form:input path="id" id="id"/><br>
+Nombre: <form:input path="name" id="name"/><br>
+ApePateno: <form:input path="lastNameP" id="lastNameP"/><br>
+ApeMateno: <form:input path="lastNameM" id="lastNameM"/><br>
+DNI: <form:input path="dni" id="dni"/><br>
+
+<input type="text" name="opc" id="opc" value="${opc}"><br>
+
+<button type="submit">Guardar</button>
+
+</form:form>

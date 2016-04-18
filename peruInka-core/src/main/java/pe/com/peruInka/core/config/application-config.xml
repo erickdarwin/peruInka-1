@@ -11,15 +11,15 @@
 
 <!-- 	<context:component-scan base-package="pe.com.peruInka.core.config" /> -->
 	
-	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+<!-- 	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/> -->
 
-	<bean id="propertyConfigurer"
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="locations">
-			<list>
-				<value>classpath:/pe/com/peruInka/core/config/database.properties</value>
-			</list>
-		</property>
-	</bean>
+<!-- 	<bean id="propertyConfigurer" -->
+<!-- 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> -->
+<!-- 		<property name="locations"> -->
+<!-- 			<list> -->
+<!-- 				<value>classpath:/pe/com/peruInka/core/config/database.properties</value> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
 
 </beans>

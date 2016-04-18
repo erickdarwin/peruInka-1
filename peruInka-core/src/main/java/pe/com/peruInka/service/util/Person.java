@@ -1,8 +1,8 @@
-package pe.com.peruInka.webapp.util;
+package pe.com.peruInka.service.util;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "person")
+//@XmlRootElement(name = "person")
 public class Person {
 
 	private Long id;
@@ -10,6 +10,7 @@ public class Person {
 	private String lastNameP;
 	private String lastNameM;
 	private String dni;
+	private String status;
 
 	public String getName() {
 		return name;
@@ -49,6 +50,14 @@ public class Person {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }

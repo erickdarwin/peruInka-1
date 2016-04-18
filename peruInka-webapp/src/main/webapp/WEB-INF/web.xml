@@ -18,8 +18,8 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			classpath:/pe/com/peruInka/core/config/application-config.xml,
-			classpath:/pe/com/peruInka/core/config/applicationContext-dao.xml
-<!-- 			classpath:/pe/com/eruInka/config/applicationContext-service.xml, -->
+			classpath:/pe/com/peruInka/core/config/applicationContext-dao.xml,
+			classpath:/pe/com/peruInka/service/config/applicationContext-service.xml
 <!-- 			/WEB-INF/applicationContext-spring-security.xml -->
 		</param-value>
 	</context-param>
