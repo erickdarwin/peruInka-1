@@ -7,10 +7,12 @@
 	mutable="false">
 		<comment />
 		<id name="typeCode" type="string">
-			<column name="typeCode" length="15" />
+			<column name="typeCode" length="20" />
 			<generator class="assigned" />
 		</id>
+		
 		<discriminator column="typeCategory" type="string" />
+		
 		<property name="description" type="string">
 			<column name="description" length="100"></column>
 		</property>
@@ -22,8 +24,10 @@
 		<property name="orderBy" type="java.lang.Long">
 			<column name="orderBy"></column>
 		</property>
+		
 		<subclass name="pe.com.peruInka.core.domain.TypeDocument" discriminator-value="TYPE_DOCUMENT" />
 		<subclass name="pe.com.peruInka.core.domain.StatusPerson" discriminator-value="STATUS_PERSON" />
+		<subclass name="pe.com.peruInka.core.domain.StatusUser" discriminator-value="STATUS_USER" />
 
 	</class>
 </hibernate-mapping>

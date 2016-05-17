@@ -5,3 +5,7 @@ INSERT INTO baseType VALUES('DOCUMENT_C_EXTRA','TYPE_DOCUMENT','Carne de extrang
 
 INSERT INTO baseType VALUES('PERSON_ACT','STATUS_PERSON','Activo','',null);
 INSERT INTO baseType VALUES('PERSON_INACT','STATUS_PERSON','Inactivo','',null);
+
+INSERT INTO baseType VALUES('USER_ACT','STATUS_USER','Activo','',null);
+INSERT INTO baseType VALUES('USER_INACT','STATUS_USER','Inactivo','',null);
+

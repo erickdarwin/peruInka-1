@@ -21,6 +21,9 @@
 		<property name="lastNameM" type="string">
 			<column name="lastNameM" length="25" />
 		</property>
+<!-- 		<property name="typeDocument" type="string"> -->
+<!-- 			<column name="typeDocument" length="20" /> -->
+<!-- 		</property> -->
 		<property name="numDocument" type="string">
 			<column name="numDocument" length="20" />
 		</property>

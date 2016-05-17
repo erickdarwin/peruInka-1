@@ -19,6 +19,8 @@ public class Person extends BaseEntity implements Serializable{
 	private String numDocument;
 	private String phone;
 	private String address;
+//	private String typeDocument;
+//	private String statusPerson;
 	private TypeDocument typeDocument;
 	private StatusPerson statusPerson;
 
