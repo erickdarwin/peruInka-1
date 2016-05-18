@@ -39,13 +39,13 @@ public class DashboardController {
 	
 	@RequestMapping(value = "home/frmPerson", method = RequestMethod.GET)
 	public String newPerson(Model model, HttpServletRequest request) {
-		model.addAttribute("person", new Person());
+		model.addAttribute("person", new pe.com.peruInka.core.domain.Person());
 		model.addAttribute("opc", "new");
 		return "home/frmPerson";
 	}
 
 	@RequestMapping(value = "home/savePerson", method = RequestMethod.POST)
-	public String savePerson(Model model, HttpServletRequest request,@ModelAttribute("person") Person person) {
+	public String savePerson(Model model, HttpServletRequest request,@ModelAttribute("person") pe.com.peruInka.core.domain.Person person) {
 //		String id = request.getParameter("id");
 //		String name = request.getParameter("name");
 //		String lastNameP = request.getParameter("lastNameP");
@@ -53,7 +53,7 @@ public class DashboardController {
 		if(opc.equals("new")){
 			peruInkaService.savePerson(person);
 		}else{
-			peruInkaService.updatePerson(person);
+//			peruInkaService.updatePerson(person);
 		}
 		
 		return "redirect:dashboard";

@@ -13,11 +13,12 @@ Formulario Persona : ${opc}<br>
 
 <form:form commandName="person" action="savePerson" method="POST">
 
-id: <form:input path="id" id="id"/><br>
+<input type="hidden" id="id" name="id" value="${person.id}">
+
 Nombre: <form:input path="name" id="name"/><br>
-ApePateno: <form:input path="lastNameP" id="lastNameP"/><br>
+ApePateno: <form:input path="lastNameF" id="lastNameF"/><br>
 ApeMateno: <form:input path="lastNameM" id="lastNameM"/><br>
-DNI: <form:input path="dni" id="dni"/><br>
+<%-- DNI: <form:input path="dni" id="dni"/><br> --%>
 
 <input type="text" name="opc" id="opc" value="${opc}"><br>
 

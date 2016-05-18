@@ -8,6 +8,7 @@
 
 		<mapping resource="pe/com/peruInka/core/domain/BaseType.hbm.xml" />
 		<mapping resource="pe/com/peruInka/core/domain/Person.hbm.xml" />
+		<mapping resource="pe/com/peruInka/core/domain/UserSystem.hbm.xml" />
 
 
 	</session-factory>

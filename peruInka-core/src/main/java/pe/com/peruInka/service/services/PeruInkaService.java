@@ -3,24 +3,32 @@ package pe.com.peruInka.service.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import pe.com.peruInka.core.dao.PersonDAO;
 import pe.com.peruInka.service.util.Person;
 
 @Service("peruInkaService")
 public class PeruInkaService {
 
 	public static List<Person> listPerson = new ArrayList<Person>();
-
-	public void savePerson(Person person) {
-		listPerson.add(person);
-		// peruInkaDAO.savePerson(person);
+	
+	
+	@Autowired
+	private PersonDAO personDAO;
+	
+	public List<pe.com.peruInka.core.domain.Person> findAllPerson() {
+		 return personDAO.findAllPerson();
+//		return listPerson;
+	}
+	
+	
+	public void savePerson(pe.com.peruInka.core.domain.Person person) {
+//		listPerson.add(person);
+		personDAO.savePerson(person);
 	}
 
-	public List<Person> findAllPerson() {
-		// return peruInkaDAO.findAllPerson();
-		return listPerson;
-	}
 
 	public void deletePerson(Long id) {
 		// peruInkaDAO.deletePerson(id);

@@ -13,9 +13,40 @@ public class UserSystem extends BaseEntity implements Serializable{
 	private String userName;
 	private String userPassword;
 	private Date dateIni;
-	private Date dateFin;
-	private String status;
-	private Long personId;
+	private Date dateEnd;
+	private StatusUser statusUser;
+//	private Long personId;
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getUserPassword() {
+		return userPassword;
+	}
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
+	public Date getDateIni() {
+		return dateIni;
+	}
+	public void setDateIni(Date dateIni) {
+		this.dateIni = dateIni;
+	}
+	public Date getDateEnd() {
+		return dateEnd;
+	}
+	public void setDateEnd(Date dateEnd) {
+		this.dateEnd = dateEnd;
+	}
+	public StatusUser getStatusUser() {
+		return statusUser;
+	}
+	public void setStatusUser(StatusUser statusUser) {
+		this.statusUser = statusUser;
+	}
+	
 	
 	
 }

@@ -33,9 +33,9 @@
         </many-to-one>		
 
 
-		<property name="personId" type="string">
-			<column name="personId" length="25" />
-		</property>
+<!-- 		<property name="personId" type="string"> -->
+<!-- 			<column name="personId" length="25" /> -->
+<!-- 		</property> -->
 
 <!--         <many-to-one name="typeDocument" class="pe.com.peruInka.core.domain.TypeDocument" lazy="false" fetch="select"> -->
 <!--             <column name="typeDocument" /> -->

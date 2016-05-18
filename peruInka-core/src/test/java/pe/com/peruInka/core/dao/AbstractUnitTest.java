@@ -11,9 +11,8 @@ public class AbstractUnitTest extends
 		setAutowireMode(AUTOWIRE_BY_TYPE);
 		return new String[] {
 				"pe/com/peruInka/core/config/application-config.xml",
-				"pe/com/peruInka/core/config/applicationContext-dao.xml"
-				
-//				"org/elecciones/core/service/config/applicationContext-service.xml"
+				"pe/com/peruInka/core/config/applicationContext-dao.xml",
+				"pe/com/peruInka/service/config/applicationContext-service.xml"
 //				"com/goolstar/core/config/applicationContext-dao.xml",
 //				"com/goolstar/core/config/applicationContext-service.xml",
 //				"com/goolstar/core/config/applicationContext-emailservice.xml", 
