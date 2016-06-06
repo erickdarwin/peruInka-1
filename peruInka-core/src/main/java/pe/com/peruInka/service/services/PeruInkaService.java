@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import pe.com.peruInka.core.dao.PersonDAO;
+import pe.com.peruInka.core.domain.StatusPerson;
+import pe.com.peruInka.core.domain.TypeDocument;
 import pe.com.peruInka.service.util.Person;
 
 @Service("peruInkaService")
@@ -17,13 +19,21 @@ public class PeruInkaService {
 	
 	@Autowired
 	private PersonDAO personDAO;
+
 	
+	public List<TypeDocument> findTypeDocument(){
+		return personDAO.findTypeDocument();
+	}
+
+	public List<StatusPerson> findStatusPerson(){
+		return personDAO.findStatusPerson();
+	}
+
 	public List<pe.com.peruInka.core.domain.Person> findAllPerson() {
 		 return personDAO.findAllPerson();
 //		return listPerson;
 	}
-	
-	
+
 	public void savePerson(pe.com.peruInka.core.domain.Person person) {
 //		listPerson.add(person);
 		personDAO.savePerson(person);
@@ -69,4 +79,6 @@ public class PeruInkaService {
 		}
 		return personReturn;
 	}
+
+	
 }
