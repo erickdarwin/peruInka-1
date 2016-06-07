@@ -3,6 +3,7 @@ package pe.com.peruInka.core.dao;
 import java.util.List;
 
 import pe.com.peruInka.core.domain.Person;
+import pe.com.peruInka.core.domain.StatusPerson;
 import pe.com.peruInka.core.domain.TypeDocument;
 import pe.com.peruInka.core.domain.UserSystem;
 
@@ -16,11 +17,14 @@ public class PersonDAOImpl extends BaseDAOHibernate implements PersonDAO {
 		return find(UserSystem.class, "from UserSystem");
 	}
 
-	
 	public List<TypeDocument> findTypeDocument() {
 		return find(TypeDocument.class, "from TypeDocument");
 	}
-	
+
+	public List<StatusPerson> findStatusPerson() {
+		return find(StatusPerson.class, "from StatusPerson");
+	}
+
 	public void savePerson(Person person){
 		save(person);
 	}

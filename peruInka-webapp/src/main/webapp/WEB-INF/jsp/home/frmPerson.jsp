@@ -1,27 +1,69 @@
-<%@ page import="org.springframework.web.util.UrlPathHelper"%>
-<%@ page contentType="text/html;charset=UTF-8" %>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%--@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" --%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
-<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
+<%@ include file="/WEB-INF/jsp/include/taglibs.jsp"%>
 
-Formulario Persona : ${opc}<br>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span2">MENBU</div>
+		<div class="span10">
 
-<form:form commandName="person" action="savePerson" method="POST">
 
-<input type="hidden" id="id" name="id" value="${person.id}">
+			<legend>Formulario Persona : ${opc}</legend>
+			<form:form commandName="person" action="savePerson" method="POST">
 
-Nombre: <form:input path="name" id="name"/><br>
-ApePateno: <form:input path="lastNameF" id="lastNameF"/><br>
-ApeMateno: <form:input path="lastNameM" id="lastNameM"/><br>
-<%-- DNI: <form:input path="dni" id="dni"/><br> --%>
+				<table>
+					<tr>
+						<td>Nombre:</td>
+						<td><form:input path="name" id="name" />
+						<td />
+					</tr>
+					<tr>
+						<td>Apellido Paterno:</td>
+						<td><form:input path="lastNameF" id="lastNameF" />
+						<td />
+					</tr>
+					<tr>
+						<td>Apellido Materno:</td>
+						<td><form:input path="lastNameM" id="lastNameM" />
+						<td />
+					</tr>
+					<tr>
+						<td>Tipo Documento</td>
+						<td><form:select path="typeDocument.typeCode">
+								<option value="">Seleccione</option>
+								<form:options items="${typeDocument}" itemValue="typeCode"
+									itemLabel="description" />
+							</form:select></td>
+					</tr>
+					<tr>
+						<td>Numero de Documento:</td>
+						<td><form:input path="numDocument" id="numDocument" />
+						<td />
+					</tr>
 
-<input type="text" name="opc" id="opc" value="${opc}"><br>
+					<tr>
+						<td>Estado</td>
+						<td><form:select path="statusPerson.typeCode">
+								<option value="">Seleccione</option>
+								<form:options items="${statusPerson}" itemValue="typeCode"
+									itemLabel="description" />
+							</form:select></td>
+					</tr>
 
-<button type="submit">Guardar</button>
+					<tr>
+						<td colspan="2"><button type="submit" class="btn btn-success">Guardar</button>
+						<td />
+					</tr>
+				</table>
 
-</form:form>
+				<%-- DNI: <form:input path="dni" id="dni"/><br> --%>
+
+				<input type="hidden" name="opc" id="opc" value="${opc}">
+				<br>
+
+
+			</form:form>
+
+
+		</div>
+	</div>
+</div>
+

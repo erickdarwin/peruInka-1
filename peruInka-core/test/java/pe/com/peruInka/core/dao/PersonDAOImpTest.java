@@ -29,7 +29,7 @@ public class PersonDAOImpTest extends AbstractUnitTest {
 	}
 
 	public void testFindTypeDocument() {
-		System.out.println("::::" + personDAO.findTypeDocument().size());
+		System.out.println("::::" + personDAO.findTypeDocument());
 	}
 
 	public void testSavePerson() {

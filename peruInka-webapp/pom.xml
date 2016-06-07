@@ -22,8 +22,8 @@
 
 
 		<dependency>
-			<groupId>pe.com.peruInka-core</groupId>
-			<artifactId>peruInka-core</artifactId>
+			<groupId>pe.com.peruInka-service</groupId>
+			<artifactId>peruInka-service</artifactId>
 			<version>1.0.0.0.beta</version>
 		</dependency>
 
