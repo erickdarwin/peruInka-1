@@ -33,7 +33,7 @@
         </many-to-one>		
 
         <many-to-one name="person" class="pe.com.peruInka.core.domain.Person" lazy="false" fetch="select" 
-        					cascade="save-update">
+        					cascade="all">
             <column name="personId" />
         </many-to-one>		
 

@@ -40,6 +40,7 @@ contextPath = "<%=request.getContextPath()%>";
 				<nav class="nav">
 					<ul class="nav">
 						<li <c:if test="${menuHeader eq 'home'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/home/dashboard.html">Home</a></li>
+						
 						<li <c:if test="${menuHeader eq 'admin'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/admin/dashboard.html">Admin</a></li>
 						<li <c:if test="${menuHeader eq 'userSystem'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/admin/userSystem.html">Usuario</a></li>
 
