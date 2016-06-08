@@ -1,8 +1,13 @@
 package pe.com.peruInka.core.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import pe.com.peruInka.core.domain.Person;
+import pe.com.peruInka.core.domain.StatusPerson;
+import pe.com.peruInka.core.domain.StatusUser;
+import pe.com.peruInka.core.domain.UserSystem;
 
 public class PersonDAOImpTest extends AbstractUnitTest {
 
@@ -18,15 +23,51 @@ public class PersonDAOImpTest extends AbstractUnitTest {
 //		System.out.println(peruInkaService);
 //	}
 	
+	public void testSaveUserSystem(){
+		UserSystem userSystem = new UserSystem();
+		userSystem.setUserName("lchahuares");
+		userSystem.setUserPassword("chahuares");
+		
+		StatusUser statusUser = new StatusUser();
+		statusUser.setTypeCode(StatusUser.USER_INACT);
+		
+		userSystem.setStatusUser(statusUser);
+
+		Person person = new Person();
+		person.setName("Lesly");
+		person.setLastNameF("Chahuares");
+		person.setLastNameM("Flores");
+		
+		StatusPerson statusPerson = new StatusPerson();
+		statusPerson.setTypeCode(StatusPerson.Status.PERSON_ACT.toString());
+		person.setStatusPerson(statusPerson);
+		
+		userSystem.setPerson(person);
+		
+		personDAO.saveUserSystem(userSystem);
+		setComplete();
+	}
+	
+	public void testFindUserSystem(){
+		
+//		System.out.println(personDAO.findUserSystem());
+//		
+//		UserSystem userSystem = personDAO.findUserSystem().get(0);
+//		System.out.println("userSystem::: "+userSystem.getPerson().getName());
+//		System.out.println("userSystem::: "+userSystem.getUserName());
+//		
+		List<UserSystem> listaUserSystem = personDAO.findUserSystem();
+		
+		for (UserSystem userSystem2 : listaUserSystem) {
+			System.out.println(userSystem2.getUserName()+"  ::: "+userSystem2.getPerson().getName());
+		}
+		
+	}
 	
 	public void testFindAllPerson() {
 		System.out.println("===" + personDAO.findAllPerson());
 	}
 
-	public void testFindAllUser() {
-		System.out.println("::::" + personDAO.findAllUser());
-
-	}
 
 	public void testFindTypeDocument() {
 		System.out.println("::::" + personDAO.findTypeDocument());

@@ -32,6 +32,18 @@
             <column name="status" />
         </many-to-one>		
 
+        <many-to-one name="person" class="pe.com.peruInka.core.domain.Person" lazy="false" fetch="select" 
+        					cascade="save-update">
+            <column name="personId" />
+        </many-to-one>		
+
+
+
+
+
+
+
+
 
 <!-- 		<property name="personId" type="string"> -->
 <!-- 			<column name="personId" length="25" /> -->

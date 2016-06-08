@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import pe.com.peruInka.core.dao.PersonDAO;
 import pe.com.peruInka.core.domain.StatusPerson;
 import pe.com.peruInka.core.domain.TypeDocument;
+import pe.com.peruInka.core.domain.UserSystem;
 import pe.com.peruInka.service.util.Person;
 
 @Service("peruInkaService")
@@ -39,7 +40,21 @@ public class PeruInkaService {
 		personDAO.savePerson(person);
 	}
 
+	
+	
+	
 
+	
+	public List<UserSystem> findUserSystem(){
+		return personDAO.findUserSystem();
+	}
+
+	public void saveUserSystem(UserSystem userSystem){
+		personDAO.saveUserSystem(userSystem);
+	}
+	
+	
+	
 	public void deletePerson(Long id) {
 		// peruInkaDAO.deletePerson(id);
 		List<Person> listPersoTemp = new ArrayList<Person>();

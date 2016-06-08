@@ -13,7 +13,7 @@ public class PersonDAOImpl extends BaseDAOHibernate implements PersonDAO {
 		return find(Person.class, "from Person");
 	}
 
-	public List<UserSystem> findAllUser() {
+	public List<UserSystem> findUserSystem() {
 		return find(UserSystem.class, "from UserSystem");
 	}
 
@@ -29,6 +29,11 @@ public class PersonDAOImpl extends BaseDAOHibernate implements PersonDAO {
 		save(person);
 	}
 
+	public void saveUserSystem(UserSystem userSystem){
+		save(userSystem);
+	}
+
+	
 	public Person findPersonById(Long id){
 		return findById(Person.class, id);
 	}

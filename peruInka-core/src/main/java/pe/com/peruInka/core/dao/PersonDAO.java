@@ -11,8 +11,8 @@ public interface PersonDAO {
 
 	List<Person> findAllPerson();
 
-	List<UserSystem> findAllUser();
-
+	List<UserSystem> findUserSystem();
+	
 	List<TypeDocument> findTypeDocument();
 	
 	void savePerson(Person person);
@@ -22,4 +22,6 @@ public interface PersonDAO {
 	void deletePerson(Person person);
 	
 	List<StatusPerson> findStatusPerson();
+	
+	void saveUserSystem(UserSystem userSystem);
 }
