@@ -11,7 +11,6 @@ contextPath = "<%=request.getContextPath()%>";
 	<div class="navbar-inner">
         <div class="container">
         	
-<%--           	<a class="brand" href="<%=request.getContextPath()%>/home/dashboard.html"><img alt="" src="<%=request.getContextPath()%>/images/logo_elecciones.jpg" width="200" height="40"> </a> --%>
 		
 			<div class="btn-group pull-right">
 	            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
@@ -38,12 +37,44 @@ contextPath = "<%=request.getContextPath()%>";
 			
 			<div class="nav-collapse">
 				<nav class="nav">
+				
+
+				
 					<ul class="nav">
 						<li <c:if test="${menuHeader eq 'home'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/home/dashboard.html">Home</a></li>
 						
 						<li <c:if test="${menuHeader eq 'admin'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/admin/dashboard.html">Admin</a></li>
-						<li <c:if test="${menuHeader eq 'userSystem'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/admin/userSystem.html">Usuario</a></li>
+						
 
+						<li
+						
+							<c:choose>
+								<c:when test="${menuHeader eq 'maintain'}">
+									class="dropdown active"
+								</c:when>    
+								<c:otherwise>
+									class="dropdown"
+								</c:otherwise>
+							</c:choose>
+						
+						
+						>
+						
+							  <a data-toggle="dropdown">Mantenimiento
+							  <span class="caret"></span></a>
+							  <ul class="dropdown-menu">
+									<li <c:if test="${menuHeaderChild eq 'customer'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/maintain/customer.html">Cliente</a></li>
+									<li <c:if test="${menuHeaderChild eq 'enterprice'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/maintain/enterprice.html">Empresa</a></li>
+									<li <c:if test="${menuHeaderChild eq 'product'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/maintain/product.html">Producto</a></li>
+									<li <c:if test="${menuHeaderChild eq 'user'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/maintain/user.html">Usuario</a></li>
+							  </ul>
+						
+						
+						</li>
+				
+						
+						<li <c:if test="${menuHeader eq 'userSystem'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/admin/userSystem.html">Usuario</a></li>
+	
 					</ul>
 				</nav>
 			</div>

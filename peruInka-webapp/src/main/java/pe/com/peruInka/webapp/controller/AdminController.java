@@ -27,6 +27,7 @@ public class AdminController {
 	public String adminUserSystem(Model model, HttpServletRequest request){
 
 		request.getSession().setAttribute("menuHeader", "userSystem");
+		request.getSession().setAttribute("menuHeaderChild", "");
 		
 		model.addAttribute("listUserSystem", peruInkaService.findUserSystem());
 		
@@ -88,6 +89,7 @@ public class AdminController {
 	public String adminDashboard(Model model, HttpServletRequest request) {
 
 		request.getSession().setAttribute("menuHeader", "admin");
+		request.getSession().setAttribute("menuHeaderChild", "");
 
 		System.out.println("admin/dashboard");
 

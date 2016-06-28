@@ -56,5 +56,11 @@
 	<bean id="personDAO" class="pe.com.peruInka.core.dao.PersonDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+
+	<bean id="userDAO" class="pe.com.peruInka.core.dao.UserDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
 	
 </beans>

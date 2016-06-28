@@ -3,6 +3,7 @@
         <pattern>/home/*</pattern>
         <pattern>/admin/*</pattern>
         <pattern>/Seguridad/*</pattern>
+        <pattern>/maintain/*</pattern>
     </decorator>
 
     <decorator name="popup" page="popup.jsp">

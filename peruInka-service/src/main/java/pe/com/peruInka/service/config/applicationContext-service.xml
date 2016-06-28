@@ -27,7 +27,7 @@
 <!-- 		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod" /> -->
 <!-- 	</aop:config> -->
 
-<!-- 	<bean id="userService" class="org.elecciones.core.service.UserServiceImpl"> -->
-<!-- 	</bean> -->
+	<bean id="userService" class="pe.com.peruInka.service.services.UserServiceImpl">
+	</bean>
 
 </beans>

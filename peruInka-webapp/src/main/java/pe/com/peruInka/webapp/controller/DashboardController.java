@@ -27,6 +27,8 @@ public class DashboardController {
 		model.addAttribute("listPerson", peruInkaService.findAllPerson());
 
 		request.getSession().setAttribute("menuHeader", "home");
+		request.getSession().setAttribute("menuHeaderChild", "");
+		
 	
 		System.out.println("home/dashboard");
 

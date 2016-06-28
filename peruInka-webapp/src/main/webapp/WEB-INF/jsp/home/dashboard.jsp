@@ -8,7 +8,6 @@ Bienvenido a la cadena de hotel PeruInka
 <display:table name="${listPerson}" id="item" class="table">
  	<display:column title="Codigo" property="id" />
 	<display:column title="Nombres" property="name" />
-	<display:column title="Ape Paterno" property="lastNameF" />
 	<display:column title="Ape Paterno" property="lastNameM" />
 	<display:column title="Tipo Documento" property="typeDocument" />
 	<display:column title="Tipo Documento DESC" property="typeDocument.description" />
