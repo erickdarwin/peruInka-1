@@ -13,4 +13,14 @@ public class UserDAOImplTest extends AbstractUnitTest {
 		UserSystem userSystem = userDAO.findUserSystemByUserAndPassword("ocalsin__", "ocalsin");
 		System.out.println("userSystem " + userSystem);
 	}
+	
+
+	public void testFindRoleByUserId() {
+		
+		String[] roles =  userDAO.findRoleByUserId(1L);
+		System.out.println("roles :: "+roles.length);
+		
+	}
+
+//	String[] findRoleByUserId(Long userId)
 }

@@ -1,6 +1,6 @@
 <%@ include file="/WEB-INF/jsp/include/taglibs.jsp"%>
-<%-- <c:set var="authentication" value="${sessionScope['SPRING_SECURITY_CONTEXT'].authentication}" /> --%>
-<%-- <c:set var="user" value="${authentication.details}" /> --%>
+<c:set var="authentication" value="${sessionScope['SPRING_SECURITY_CONTEXT'].authentication}" />
+<c:set var="user" value="${authentication.details}" />
 
 
 <script type="text/javascript">
@@ -63,13 +63,23 @@ contextPath = "<%=request.getContextPath()%>";
 							  <a data-toggle="dropdown">Mantenimiento
 							  <span class="caret"></span></a>
 							  <ul class="dropdown-menu">
-									<li <c:if test="${menuHeaderChild eq 'customer'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/maintain/customer.html">Cliente</a></li>
-									<li <c:if test="${menuHeaderChild eq 'enterprice'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/maintain/enterprice.html">Empresa</a></li>
-									<li <c:if test="${menuHeaderChild eq 'product'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/maintain/product.html">Producto</a></li>
+								
+								<c:forEach items="${user.roles}" var="item">
+									<c:if test="${item eq 'ROLE_SECRE' }">
+										<li <c:if test="${menuHeaderChild eq 'customer'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/maintain/customer.html">Cliente</a></li>
+										<li <c:if test="${menuHeaderChild eq 'enterprice'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/maintain/enterprice.html">Empresa</a></li>
+										<li <c:if test="${menuHeaderChild eq 'product'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/maintain/product.html">Producto</a></li>
+									</c:if>
+								</c:forEach>
+								
+								<c:forEach items="${user.roles}" var="item">
+									<c:if test="${item eq 'ROLE_ADMIN' }">
 									<li <c:if test="${menuHeaderChild eq 'user'}"> class="active"</c:if>><a href="<%=request.getContextPath() %>/maintain/user.html">Usuario</a></li>
+									</c:if>
+								</c:forEach>
+									
 							  </ul>
-						
-						
+
 						</li>
 				
 						
