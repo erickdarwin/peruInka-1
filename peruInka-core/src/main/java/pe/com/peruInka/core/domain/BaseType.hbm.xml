@@ -28,6 +28,11 @@
 		<subclass name="pe.com.peruInka.core.domain.TypeDocument" discriminator-value="TYPE_DOCUMENT" />
 		<subclass name="pe.com.peruInka.core.domain.StatusPerson" discriminator-value="STATUS_PERSON" />
 		<subclass name="pe.com.peruInka.core.domain.StatusUser" discriminator-value="STATUS_USER" />
-
+		<subclass name="pe.com.peruInka.core.domain.StatusRole" discriminator-value="STATUS_ROLE" />
+		<subclass name="pe.com.peruInka.core.domain.StatusHotel" discriminator-value="STATUS_HOTEL" />
+		<subclass name="pe.com.peruInka.core.domain.StatusProducto" discriminator-value="TYPE_PRODUCT" />
+		<subclass name="pe.com.peruInka.core.domain.StatusTicket" discriminator-value="STATUS_TICKET" />
+<!--         <subclass name="pe.com.peruInka.core.domain.StatusTicketDescription" discriminator-value="STATUS_TICKETDESCRIP" /> -->
+<!--         <subclass name="pe.com.peruInka.core.domain.StatusCustomer" discriminator-value="STATUS_CUSTOMER" /> -->
 	</class>
 </hibernate-mapping>

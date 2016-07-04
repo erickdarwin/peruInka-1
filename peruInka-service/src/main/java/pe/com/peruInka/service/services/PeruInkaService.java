@@ -6,9 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import pe.com.peruInka.core.dao.CoreInkaDAO;
 import pe.com.peruInka.core.dao.PersonDAO;
 import pe.com.peruInka.core.domain.StatusPerson;
 import pe.com.peruInka.core.domain.StatusUser;
+import pe.com.peruInka.core.domain.Ticket;
 import pe.com.peruInka.core.domain.TypeDocument;
 import pe.com.peruInka.core.domain.UserSystem;
 import pe.com.peruInka.service.util.Person;
@@ -21,12 +23,37 @@ public class PeruInkaService {
 	@Autowired
 	private PersonDAO personDAO;
 
-	// UserSystem findUserSystemById(Long id);
-	//
-	// void deleteUserSystem(UserSystem userSystem);
+	@Autowired
+	private CoreInkaDAO coreInkaDAO;
+
+	public void saveTicket(Ticket ticket) {
+		
+		System.out.println("ticket ID: "+ticket.getId());
+		
+		if(ticket.getId()==null){
+			coreInkaDAO.saveTicket(ticket);
+		}else{
+			 coreInkaDAO.updateTicket(ticket);			
+		}
+	}
+
+	// public void UpdateTicket(Ticket ticket) {
+	// }
+	public void deleteTicket(Long id) {
+		Ticket ticket = coreInkaDAO.findTicketById(id);
+		coreInkaDAO.deleteTicket(ticket);
+	}
+
+	public Ticket findTicketById(Long id) {
+		return coreInkaDAO.findTicketById(id);
+	}
+
+	public List<Ticket> findTicketAll() {
+		return coreInkaDAO.findTicketAll();
+	}
 
 	public void deleteUserSystem(Long id) {
-		UserSystem userSystem  = personDAO.findUserSystemById(id);
+		UserSystem userSystem = personDAO.findUserSystemById(id);
 		personDAO.deleteUserSystem(userSystem);
 	}
 
