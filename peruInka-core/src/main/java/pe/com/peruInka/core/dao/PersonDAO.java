@@ -10,6 +10,8 @@ import pe.com.peruInka.core.domain.UserSystem;
 
 public interface PersonDAO {
 
+	List<Person> findPersonByName(String name);
+
 	void updateUserSystem(UserSystem userSystem);
 
 	UserSystem findUserSystemById(Long id);

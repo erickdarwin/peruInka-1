@@ -8,7 +8,7 @@ import java.io.Serializable;
  *
  */
 
-public class Person extends BaseEntity implements Serializable{
+public class Person extends BaseEntity implements Serializable {
 	/**
 	 * 
 	 */
@@ -19,8 +19,8 @@ public class Person extends BaseEntity implements Serializable{
 	private String numDocument;
 	private String phone;
 	private String address;
-//	private String typeDocument;
-//	private String statusPerson;
+	// private String typeDocument;
+	// private String statusPerson;
 	private TypeDocument typeDocument;
 	private StatusPerson statusPerson;
 
@@ -86,6 +86,10 @@ public class Person extends BaseEntity implements Serializable{
 
 	public void setStatusPerson(StatusPerson statusPerson) {
 		this.statusPerson = statusPerson;
+	}
+
+	public String getNameAll() {
+		return getName() + " " + getLastNameF() + " " + getLastNameM();
 	}
 
 }

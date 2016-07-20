@@ -26,14 +26,20 @@ public class PeruInkaService {
 	@Autowired
 	private CoreInkaDAO coreInkaDAO;
 
+	// findPersonByName
+
+	public List<pe.com.peruInka.core.domain.Person> findPersonByName(String name) {
+		return personDAO.findPersonByName(name);
+	}
+
 	public void saveTicket(Ticket ticket) {
-		
-		System.out.println("ticket ID: "+ticket.getId());
-		
-		if(ticket.getId()==null){
+		Ticket t =  new Ticket();
+		System.out.println("ticket ID: " + ticket.getId());
+
+		if (ticket.getId() == null) {
 			coreInkaDAO.saveTicket(ticket);
-		}else{
-			 coreInkaDAO.updateTicket(ticket);			
+		} else {
+			coreInkaDAO.updateTicket(ticket);
 		}
 	}
 
@@ -123,15 +129,11 @@ public class PeruInkaService {
 
 	}
 
-	public Person searchPerson(Long id) {
-		Person personReturn = new Person();
-		for (Person person : listPerson) {
-			if (id.compareTo(person.getId()) == 0) {
-				personReturn = person;
-				continue;
-			}
-		}
-		return personReturn;
+	public pe.com.peruInka.core.domain.Person searchPerson(Long id) {
+		return personDAO.findPersonById(id);
 	}
 
+	
+	
+	
 }

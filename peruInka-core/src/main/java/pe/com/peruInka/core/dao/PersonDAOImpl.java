@@ -10,17 +10,20 @@ import pe.com.peruInka.core.domain.UserSystem;
 
 public class PersonDAOImpl extends BaseDAOHibernate implements PersonDAO {
 
-	
+	public List<Person> findPersonByName(String name) {
+		String sql = "from Person WHERE name like '%" + name + "%' or lastNameF like '%" + name
+				+ "%' or lastNameM like '%" + name + "%' ";
+		return find(Person.class, sql);
+	}
+
 	public UserSystem findUserSystemById(Long id) {
 		return findById(UserSystem.class, id);
 	}
-	
+
 	public void deleteUserSystem(UserSystem userSystem) {
 		delete(userSystem);
 	}
 
-	
-	
 	public List<Person> findAllPerson() {
 		return find(Person.class, "from Person");
 	}
@@ -37,11 +40,10 @@ public class PersonDAOImpl extends BaseDAOHibernate implements PersonDAO {
 		return find(StatusPerson.class, "from StatusPerson");
 	}
 
-	
-	public void updateUserSystem(UserSystem userSystem){
+	public void updateUserSystem(UserSystem userSystem) {
 		update(userSystem);
 	}
-	
+
 	public void savePerson(Person person) {
 		save(person);
 	}
